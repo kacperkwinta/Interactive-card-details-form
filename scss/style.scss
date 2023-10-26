@@ -1,0 +1,103 @@
+/////////////////////////////////////
+/// VARIABLES
+/////////////////////////////////////
+
+// colors
+$color-primary-1: hsl(0, 0%, 100%);
+$color-primary-2: hsl(270, 3%, 87%);
+$color-primary-3: hsl(279, 6%, 55%);
+$color-primary-4: hsl(278, 68%, 11%);
+$color-primary-5: hsl(0, 100%, 66%);
+
+$color-gradient-1: hsl(249, 99%, 64%);
+$color-gradient-2: hsl(278, 94%, 30%);
+
+// box-shadows
+$box-shadow-1: hsla(0, 0%, 0%, 0.2) 0px 7px 29px 0px;
+
+///////////////////////////////
+/// MIXINS
+///////////////////////////////
+@mixin flex($x, $y, $gap) {
+	display: flex;
+	justify-content: $x;
+	align-items: $y;
+	gap: $gap;
+}
+
+@mixin respond($breakpoint) {
+	@if $breakpoint ==phone-s {
+		@media only screen and (max-width: 25em) {
+			// 400px
+			@content;
+		}
+	}
+	@if $breakpoint ==phone {
+		@media only screen and (max-width: 37.5em) {
+			// 600px
+			@content;
+		}
+	}
+
+	@if $breakpoint ==tab-port {
+		@media only screen and (max-width: 56.25em) {
+			// 900px
+			@content;
+		}
+	}
+
+	@if $breakpoint ==tab-land-s {
+		@media only screen and (max-width: 68.75em) {
+			// 1100px
+			@content;
+		}
+	}
+
+	@if $breakpoint ==tab-land {
+		@media only screen and (max-width: 75em) {
+			// 1200px
+			@content;
+		}
+	}
+}
+
+///////////////////////////////
+/// UTILITY CLASSES
+///////////////////////////////
+// .hidden {
+// 	display: none;
+// }
+
+// .unhide {
+// 	display: unset;
+// }
+
+// .invisible {
+// 	opacity: 0;
+// 	user-select: none;
+// }
+
+// .visible {
+// 	opacity: 1;
+// 	user-select: all;
+// }
+
+/////////////////////////////////////
+/// GLOBAL
+/////////////////////////////////////
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	font-family: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.8rem;
+	font-weight: 500;
+}
